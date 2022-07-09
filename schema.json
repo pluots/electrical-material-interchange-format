@@ -1,5 +1,6 @@
 {
   "title": "Electrical-Material-Interchange-Format",
+  "$id": "https://raw.githubusercontent.com/pluots/electrical-material-interchange-format/main/schema.json",
   "description": "A format designed to share information about materials relevant in electrical and electronic design. Specifications are located at https://github.com/pluots/electrical-material-interchange-format",
   "x-stoplight": {
     "id": "846qim6mvab2i"
