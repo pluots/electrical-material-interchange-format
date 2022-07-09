@@ -1,0 +1,102 @@
+{
+  "title": "Electrical-Material-Interchange-Format",
+  "description": "A format designed to share information about materials relevant in electrical and electronic design. Specifications are located at https://github.com/pluots/electrical-material-interchange-format",
+  "x-stoplight": {
+    "id": "846qim6mvab2i"
+  },
+  "type": "object",
+  "examples": [],
+  "properties": {
+    "spec_version": {
+      "type": "string"
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "format": "uuid",
+            "description": "A material-specific v4 UUID that can be used to reference it"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of this material"
+          },
+          "description": {
+            "type": "string",
+            "description": "Optional further information about the material"
+          },
+          "display_color": {
+            "type": "string",
+            "pattern": "^(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{8})$",
+            "description": "RGBA custom display color. If not provided, a default will be used."
+          },
+          "density": {
+            "type": "number",
+            "description": "Density in kg/m3"
+          },
+          "process": {
+            "type": "string"
+          },
+          "base_thickness": {
+            "type": "string"
+          },
+          "finish_process": {
+            "type": "string"
+          },
+          "resistivity": {
+            "type": "number"
+          },
+          "glass_transition_temp": {
+            "type": "string"
+          },
+          "freq_characteristics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "frequency": {
+                  "type": "number"
+                },
+                "dielectric_constant": {
+                  "type": "number"
+                },
+                "loss_tangent": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "resin_content": {
+            "type": "number"
+          },
+          "material": {
+            "type": "string"
+          },
+          "dielectric_strength": {
+            "type": "number",
+            "description": "Dielectric breakdown field strength in V/m"
+          },
+          "substrate_type": {
+            "type": "string",
+            "enum": [
+              "FR4",
+              "FR5",
+              "ceramic",
+              "teflon",
+              "polyimide",
+              "polyolefin"
+            ],
+            "description": "For dielectric substrates, material type can be specified here"
+          }
+        },
+        "required": [
+          "uuid",
+          "name"
+        ]
+      }
+    }
+  }
+}
